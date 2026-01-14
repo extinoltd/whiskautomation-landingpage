@@ -158,6 +158,9 @@ function App() {
       window.history.pushState({}, '', newUrl);
       setCurrentView(view);
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (!sectionId) {
+      // If staying on same view and no section specified, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     if (sectionId) {
@@ -303,7 +306,7 @@ function App() {
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
                 <div className="col-span-1 md:col-span-2">
-                  <div className="flex items-center gap-2 mb-6">
+                  <div className="flex items-center gap-2 mb-6 cursor-pointer" onClick={() => navigateTo('home')}>
                     <img alt="Whisk Automation Logo" className="w-8 h-8 rounded-lg object-cover" src={logo} />
                     <span className="font-extrabold text-xl text-white">Whisk <span className="text-primary">Automation</span></span>
                   </div>
@@ -340,12 +343,7 @@ function App() {
             </div>
           </footer>
 
-          {/* Sticky FAB */}
-          <div className={`fixed bottom-6 z-50 ${isRTL ? 'left-6' : 'right-6'}`}>
-            <button className="w-16 h-16 rounded-full bg-primary text-black flex items-center justify-center shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:scale-110 transition-transform hover:shadow-[0_0_50px_rgba(250,204,21,0.7)]" onClick={() => window.open(EXTENSION_URL, '_blank')}>
-              <Rocket size={28} strokeWidth={2.5} className={isRTL ? 'scale-x-[-1]' : ''} />
-            </button>
-          </div>
+
         </div>
       </div>
     </LangContext.Provider>
