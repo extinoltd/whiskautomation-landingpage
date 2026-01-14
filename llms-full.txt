@@ -1,0 +1,35 @@
+# Whisk Automation: Technical Overview
+
+## Product Description
+Whisk Automation is a browser-based automation tool (Chrome Extension) designed specifically for Google Whisk (formerly ImageFX/Labs). It solves the problem of manual clicking by allowing users to queue thousands of prompts.
+
+## Core Capabilities
+
+### 1. Whisk AI Batch Processing
+Users can input a list of prompts via CSV or text area. The system injects these prompts into the Google Whisk interface using DOM manipulation that mimics human typing speed to avoid bot detection.
+
+### 2. Google Whisk Auto Downloader
+The extension monitors network requests and DOM mutations. When a new image is fully rendered, it is automatically fetched and saved to the user's local disk, solving the "how to download all images from Google Whisk" problem.
+
+### 3. Workflow Automation
+- **Queue Management**: Pause, resume, and retry logic.
+- **Human-Flow**: Randomizes delays between actions (3s-12s) to ensure safety.
+
+## Localization & Internationalization
+The web platform is architected for global accessibility:
+- **Languages**: Supports 15 languages including English, Chinese, Spanish, Arabic (with full RTL layout support), Portuguese, German, Japanese, Korean, Dutch, Vietnamese, Turkish, Bengali, Thai, Polish, and Russian.
+- **Implementation**: React Context-based translation engine with dynamic document attribute updates (lang/dir).
+- **SEO**: URL query parameter support (`?lang=es`) allows for deep linking and proper indexing of localized content.
+
+## Targeted Keywords & Intent
+- **"How to bulk generate images in Google Whisk"**: Solved via the Bulk Input module.
+- **"WhiskAutomator alternative"**: We position as the premium, maintained alternative.
+- **"Export Whisk AI images in bulk"**: Solved via the Auto-Download module.
+
+## Pricing
+- Monthly: $1.99
+- Yearly: $14.99
+- Lifetime: $29.99
+
+## Architecture
+Built using React, TypeScript, and Chrome Extension Manifest V3.

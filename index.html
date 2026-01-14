@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+
+  <!-- Primary SEO -->
+  <title>Whisk Automation - Bulk Generate & Download Images in Google Whisk</title>
+  <meta name="title" content="Whisk Automation - Bulk Generate & Download Images in Google Whisk" />
+  <meta name="description"
+    content="The ultimate Google Whisk auto downloader. Automate Google Whisk prompts, batch process AI images, and export in bulk with our Chrome extension for power users." />
+  <meta name="keywords"
+    content="How to bulk generate images in Google Whisk, Whisk AI batch processing, Automate Google Whisk prompts, Google Whisk auto downloader, Export Whisk AI images in bulk" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Whisk Automation" />
+
+  <!-- Localization (Updated dynamically by JS) -->
+  <link rel="alternate" hreflang="x-default" href="https://whiskautomation.com/" />
+  <link rel="alternate" hreflang="en" href="https://whiskautomation.com/?lang=en" />
+  <link rel="alternate" hreflang="zh" href="https://whiskautomation.com/?lang=zh" />
+  <link rel="alternate" hreflang="es" href="https://whiskautomation.com/?lang=es" />
+  <link rel="alternate" hreflang="ar" href="https://whiskautomation.com/?lang=ar" />
+  <link rel="alternate" hreflang="pt" href="https://whiskautomation.com/?lang=pt" />
+  <link rel="alternate" hreflang="de" href="https://whiskautomation.com/?lang=de" />
+  <link rel="alternate" hreflang="ja" href="https://whiskautomation.com/?lang=ja" />
+  <link rel="alternate" hreflang="ko" href="https://whiskautomation.com/?lang=ko" />
+  <link rel="alternate" hreflang="nl" href="https://whiskautomation.com/?lang=nl" />
+  <link rel="alternate" hreflang="vi" href="https://whiskautomation.com/?lang=vi" />
+  <link rel="alternate" hreflang="tr" href="https://whiskautomation.com/?lang=tr" />
+  <link rel="alternate" hreflang="bn" href="https://whiskautomation.com/?lang=bn" />
+  <link rel="alternate" hreflang="th" href="https://whiskautomation.com/?lang=th" />
+  <link rel="alternate" hreflang="pl" href="https://whiskautomation.com/?lang=pl" />
+  <link rel="alternate" hreflang="ru" href="https://whiskautomation.com/?lang=ru" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://whiskautomation.com/" />
+  <meta property="og:title" content="Whisk Automation - Bulk Generate & Download Images in Google Whisk" />
+  <meta property="og:description"
+    content="Streamline Google Labs Whisk with the best automation tool. Batch process prompts and download thousands of images automatically." />
+  <meta property="og:image" content="https://whiskautomation.com/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://whiskautomation.com/" />
+  <meta property="twitter:title" content="Whisk Automation - Google Whisk Workflow Automation" />
+  <meta property="twitter:description"
+    content="How to download all images from Google Whisk? Use the #1 extension for bulk generation and auto-downloading." />
+  <meta property="twitter:image" content="https://whiskautomation.com/twitter-card.jpg" />
+
+  <!-- AI & Technical -->
+  <link rel="author" href="humans.txt" />
+
+  <!-- Structured Data (SoftwareApplication) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Whisk Automation",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Chrome, Edge, Brave",
+      "offers": {
+        "@type": "Offer",
+        "price": "1.99",
+        "priceCurrency": "USD"
+      },
+      "description": "A Chrome extension to bulk generate images in Google Whisk, automate prompts, and auto-download results.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "1250"
+      }
+    }
+    </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Delicious+Handrawn&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #FACC15;
+      --background: #050505;
+      --surface: #0F0F0F;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+    }
+
+    .font-handwriting {
+      font-family: 'Delicious Handrawn', cursive;
+    }
+
+    /* Design System Classes */
+    .neon-border {
+      border: 1px solid rgba(250, 204, 21, 0.3);
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.15);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .neon-border:hover {
+      border-color: #FACC15;
+      box-shadow: 0 0 40px rgba(250, 204, 21, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .glass-card {
+      background: rgba(15, 15, 15, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(250, 204, 21, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .yellow-gradient-text {
+      background: linear-gradient(180deg, #FFF133 0%, #FACC15 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 15px rgba(250, 204, 21, 0.3));
+    }
+
+    .cta-glow {
+      box-shadow: 0 0 25px rgba(250, 204, 21, 0.5);
+    }
+
+    .cta-glow:hover {
+      box-shadow: 0 0 40px rgba(250, 204, 21, 0.7);
+    }
+
+    /* Section Background Glow */
+    .section-glow {
+      position: relative;
+    }
+
+    .section-glow::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(250, 204, 21, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0F0F0F;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FACC15;
+    }
+
+    /* Dynamic Liquid Animations (Restored) */
+    @keyframes liquid {
+      0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+
+      33% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        transform: translate(30px, -50px) rotate(10deg) scale(1.1);
+      }
+
+      66% {
+        border-radius: 70% 30% 40% 60% / 40% 70% 50% 30%;
+        transform: translate(-20px, 20px) rotate(-5deg) scale(0.95);
+      }
+
+      100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+    }
+
+    .animate-liquid {
+      animation: liquid 15s ease-in-out infinite;
+    }
+
+    .animation-delay-2000 {
+      animation-delay: -5s;
+    }
+
+    .animation-delay-4000 {
+      animation-delay: -10s;
+    }
+
+    /* Infinite Scroll Animation */
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-scroll {
+      animation: scroll 40s linear infinite;
+    }
+
+    .animate-scroll:hover {
+      animation-play-state: paused;
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FACC15",
+            background: "#050505",
+            surface: "#0F0F0F",
+          },
+          fontFamily: {
+            display: ["Sora", "sans-serif"],
+            handwriting: ["Delicious Handrawn", "cursive"],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-background text-slate-100 selection:bg-primary selection:text-black">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
