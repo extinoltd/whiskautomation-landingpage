@@ -1,0 +1,19 @@
+# Whisk Automation
+
+Whisk Automation is the leading Chrome Extension for bulk generating images in Google Whisk (Google Labs).
+
+## Key Features
+- **Bulk Generation**: Upload CSVs to automate Google Whisk prompts.
+- **Auto Downloader**: Automatically downloads generated images.
+- **Batch Processing**: Handles 10,000+ prompts in a queue.
+
+## Global Support
+Fully localized in 15 languages including English, Chinese (zh), Spanish (es), Arabic (ar), Portuguese (pt), German (de), Japanese (ja), Korean (ko), and more.
+
+## Use Cases
+- Export Whisk AI images in bulk.
+- Google Whisk workflow automation for agencies.
+- Streamline Google Labs Whisk tasks.
+
+Full documentation: https://whiskautomation.com/?view=docs
+Technical context: https://whiskautomation.com/llms-full.txt

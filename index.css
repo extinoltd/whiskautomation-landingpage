@@ -26,3 +26,146 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Custom Styles moved from index.html */
+:root {
+  --primary: #FACC15;
+  --background: #050505;
+  --surface: #0F0F0F;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+}
+
+.font-handwriting {
+  font-family: 'Delicious Handrawn', cursive;
+}
+
+/* Design System Classes */
+.neon-border {
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neon-border:hover {
+  border-color: #FACC15;
+  box-shadow: 0 0 40px rgba(250, 204, 21, 0.4);
+  transform: translateY(-2px);
+}
+
+.glass-card {
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(250, 204, 21, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.yellow-gradient-text {
+  background: linear-gradient(180deg, #FFF133 0%, #FACC15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 15px rgba(250, 204, 21, 0.3));
+}
+
+.cta-glow {
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.5);
+}
+
+.cta-glow:hover {
+  box-shadow: 0 0 40px rgba(250, 204, 21, 0.7);
+}
+
+/* Section Background Glow */
+.section-glow {
+  position: relative;
+}
+
+.section-glow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F0F0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FACC15;
+}
+
+/* Dynamic Liquid Animations */
+@keyframes liquid {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+
+  33% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(30px, -50px) rotate(10deg) scale(1.1);
+  }
+
+  66% {
+    border-radius: 70% 30% 40% 60% / 40% 70% 50% 30%;
+    transform: translate(-20px, 20px) rotate(-5deg) scale(0.95);
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+.animate-liquid {
+  animation: liquid 15s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: -5s;
+}
+
+.animation-delay-4000 {
+  animation-delay: -10s;
+}
+
+/* Infinite Scroll Animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
